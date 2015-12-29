@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!--https://github.com/wildfly/wildfly-core/blob/master/server/src/main/resources/schema/jboss-deployment-structure-1_2.xsd-->
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="deployment.postgresql.jar"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

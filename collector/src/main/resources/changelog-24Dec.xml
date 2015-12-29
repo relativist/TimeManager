@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="asitnikov (generated)" id="1450940591834-1">
+        <createTable tableName="attendance">
+            <column autoIncrement="true" name="id" type="serial">
+                <constraints primaryKey="true" primaryKeyName="attendancePK"/>
+            </column>
+            <column name="hours" type="FLOAT8"/>
+            <column name="timestamp" type="BIGINT"/>
+            <column name="user_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="asitnikov (generated)" id="1450940591834-2">
+        <createTable tableName="time_user">
+            <column autoIncrement="true" name="id" type="serial">
+                <constraints primaryKey="true" primaryKeyName="time_userPK"/>
+            </column>
+            <column name="name" type="text"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="asitnikov (generated)" id="1450940591834-3">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="attendance" constraintName="FK_5gisgrvq90fxbmp9xdygfdugl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="time_user"/>
+    </changeSet>
+</databaseChangeLog>
